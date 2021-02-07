@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- basic page needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>Prasad</title>
+	<meta name="description" content="">  
+	<meta name="author" content="">
+
+   <!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+ 	<!-- CSS
+   ================================================== -->
+   <link rel="stylesheet" href="css/base.css">  
+   <link rel="stylesheet" href="css/main.css">
+   <link rel="stylesheet" href="css/vendor.css">     
+
+   <!-- script
+   ================================================== -->   
+	<script src="js/modernizr.js"></script>
+	<script src="js/pace.min.js"></script>
+
+   <!-- favicons
+	================================================== -->
+	<link rel="icon" type="image/png" href="favicon.png">
+
+</head>
+
+<body id="top">
+
+
+	
+
+<section id="resume" class="grey-section">
+
+		<div class="row section-intro">
+   		<div class="col-twelve">
+
+   			<h1>Design of predictive text input method for Swarachakra
+			</h1>
+
+   			<!--<h5>Re-designed onboarding flow to increase UPI and wallet registrations
+			</h5>-->
+   			
+
+   			<p>A study towards standardization of virtual keyboards for Indian languages was carried out by various Indian Institutes of Technology(IITs). In IIT Bombay, a longitudinal study with 153 users, new to virtual keyboards was carried out. Existing 4 virtual keyboards for smartphones were examined and empirically evaluated. The results were surprising. The keyboards that used prediction saved efforts theoretically, but performed poorly in the empirical evaluation hinting at a cognitive toll of about 11%. Prediction mechanism can be considered a success only when users are using it and are able to type faster, more accurately and with less effort than non-predictive keyboards. </p>
+
+            <p>The important and fundamental questions which are raised from these studies are: <em>Why do prediction methods fail? Why is the performance of non-predictive keyboards better than predictive keyboards for Indian languages even when it has been proved that prediction improves the typing performance for English?</em> <em>Even when a keyboard is expected to perform well in theory, why does it perform poorly in practice?</em> Currently, we are just slapping the Indian languages on the predictive systems designed for English. Is using the same text prediction paradigm of English for Indian languages a good idea? There is a lot of work happening around the globe for various regional languages, which takes into account the morphology of language in prediction. <em>Will considering morphology and agglutination of the language yield a better result for Indian languages?</em> 
+
+            <p>There was a need to address all these questions. But, because of time constraints of an academic project, a smaller well-defined focus area was chosen. The project explored how the interface of the predictive system affects its performance and whether predicting less words improves the predictability of a system and improves performance. A novel predictive interface was designed, developed and tested to evaluate the hypotheses.</p><br>
+
+            <br>
+
+   			
+            
+
+   		</div>   		
+   	</div> <!-- /section-intro--> 
+
+   	<div class="row resume-timeline">
+
+   		<div class="col-twelve resume-header">
+
+   			<h2>Hypotheses</h2>
+   			<p>In the earlier experiments, it was observed that users pay cognitive toll to use prediction mechanisms, as it slows down the text entry speed of users. The hypothesized reasons for this cognitive toll were:
+         </p>
+
+   			<h3>Interface requires users to shift attention constantly</h3>
+   			<p>Predictions are displayed in a prediction window which generally is on top of the keyboard. If the intended prediction does not appear in the first go, users do incremental additions of characters and look for the prediction. While doing this, they have to constantly shift their attention from the keyboard to the prediction window. This visual discontinuity is one of the reason for the poor performance of current prediction systems.
+			</p><br>
+
+			<h3>Users are unable to build a conceptual model of the prediction system
+			</h3>
+   			<p>Without a conceptual model of predictions of the predictive system, the behaviour of the system is completely uncertain. If there is word which a predictive system won’t predict, users still keep looking for it. This is another potential reason for the poor performance of current predictive systems.
+
+			</p>
+         <br><br>
+
+         <h2>Initial Design ideas</h2>
+         <br>
+			
+
+			<img src="images/portfolio/P2/ideas1.png">
+         <img src="images/portfolio/P2/ideas2.png">
+         <br><br>
+
+         <br><br>
+         <h2>Design concepts</h2>
+         <br>
+         
+
+         <img src="images/portfolio/P2/design-concepts.png"><br>
+         <br>
+         <p>Various design concepts were generated based on the model shown above. The model answers three important questions for the prediction mechanism to work. <em>What to Predict?</em> <em>Where to Predict?</em> and <em>How much to Predict?</em> Concepts on all the possible combination of the model mentioned above were generated and evaluated heuristically. The final set of concepts which were selected for the final design are Complete word prediction, Prediction chakra over prediction bar and thresholded corpus for faster conceptual model building.
+
+         </p>
+
+			
+            <br><br>
+
+            <br>   			<h2>Final design</h2>
+            <p>When a user taps on a consonant, he drags to the vowel modifier to attach a modifier. If a user further drags his finger and crosses a predefined threshold, predictions of that swarachakra unigram = consonant + vowel modifier will be displayed in the prediction chakra. There will be 3 predictions in the prediction chakra as shown in figure below. If a user goes to the prediction chakra and discovers that the prediction is not relevant, he can simply release his finger or drag further. By this, the original Swarachakra unigram will be selected. No space will be appended if user does not select prediction. If a user selects prediction, an automatic space will be appended to the selected text from prediction.</p>
+
+
+   			<img src="images/portfolio/P2/final concept.png">
+            <img src="images/portfolio/P2/design.gif"><br>
+
+            <br><br>
+
+            <br>           <h2>Design details</h2>
+            <img src="images/portfolio/P2/design-details1.png"><br><br>
+
+            <p>If a swarachakra bigram which a user selects lies in the left half of the chakra, the predictions will appear in right half and vice versa as shown in the image. This is to account the visual obstruction caused by the finger when you select a matra (vowel modifier).</p>
+
+
+            <img src="images/portfolio/P2/design-details2.png"><br><br>
+
+            <p>For the keys which are at the bottom of the keyboard, as shown in image, if the selection is in the lower half of the swarachakra keyboard, then the predicted words won’t appear sideways as shown before, but the predicted words in the prediction chakra would be appear in the upper quadrant as shown in the image.</p>
+
+            <br><br>
+
+            <br>           <h2>Limitations of the Design</h2>
+            <p>The two limitations of the final design are Words with no matras (vowel modifiers) won’t be predicted and for extremities, calling the prediction chakra is a challenge as shown in diagram below. The chakra pop-ups at various extremes are shown in the image below. There is no room for the prediction chakra to render on the display. However, from the corpus, the frequency of words starting with those characters which won't be predicted because of the limitation is very less. It was observed from calculation that only 8.629% of the entire corpus lies in this region and can be neglected without a huge loss in performance.</p>
+
+
+            <img src="images/portfolio/P2/limitation.png"><br><br><br><br>
+
+            <h2>Project Report</h2>
+
+            <iframe src="https://drive.google.com/file/d/0B-eiVwoCqNfNcDBNODBhbEtjMDg/preview" width="100%" height="480"></iframe>
+
+            <h3></h3><br><br>
+
+            <h2>Project Guide:</h2>
+
+            <h3>Prof. Anirudha Joshi</h3>
+
+   			
+
+   			<br><br><h5>Thank you!</h5>
+
+            <!-- CTA Section
+   ================================================== -->
+   <section id="cta" class="grey-section">
+
+      <div class="row cta-content">
+
+         <div class="col-twelve section-ads">  
+
+            <div class="action">
+               <a class="button stroke large" href=index.html#portfolio>Back to portfolio</a>
+            </div>
+                        
+
+         </div>
+
+      </div> <!-- /cta-content -->
+
+   </section> <!-- /cta --> 
+
+
+			</p>
+
+   		</div> <!-- /resume-header -->
+
+   	
+
+			
+
+   		
